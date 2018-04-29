@@ -52,9 +52,9 @@ void init()
 void gamebegin()
 {
 	//绘制边框
-   	setlinecolor(RGB(255,0,255));  //绘制边框颜色
-	setlinestyle(PS_SOLID,5);    //绘制边框大小
-    rectangle(255,45,745,655);    //绘制矩形边框
+   	setlinecolor(RGB(255,0,255));  //边框颜色
+	setlinestyle(PS_SOLID,5);      //边框粗细程度
+        rectangle(255,45,745,655);     //边框位置及大小
 	//绘制小球
 	srand((unsigned) time(NULL));   //提供随机种子
 	setlinestyle(PS_SOLID,8);   
@@ -64,12 +64,12 @@ void gamebegin()
 		{
 			COLORREF c1=colorArr[rand()%6];  //rand()%6提供0~5共6个随机数
 			setlinecolor(c1);    
-	        setfillcolor(c1);  
+	                setfillcolor(c1);  
 			fillcircle(x,y,10);
 		}
 	}
    	//绘制光标
-	cur.x=480;
+	cur.x=480;          //坐标x,y为光标所在的初始坐标，位于界面中心
 	cur.y=390;
  	drawcursor(cur,RGB(255,255,255));
 }
@@ -77,9 +77,9 @@ void gamebegin()
 
 void  gameplay()
 {
-	cur.x=480;
+    cur.x=480;
     cur.y=390;
-    int score=0;    //初始化
+    int score=0;    //分数初始化
 	for(int i=299;i>=0;i--)
 	{
 		if(i%10==0)
