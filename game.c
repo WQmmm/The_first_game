@@ -80,11 +80,11 @@ void  gameplay()
     cur.x=480;
     cur.y=390;
     int score=0;    //分数初始化
-	for(int i=299;i>=0;i--)
+	for(int i=299;i>=0;i--)    //游戏时间
 	{
 		if(i%10==0)
 		{
- 	    	drawtime(i/10);
+ 	    	drawtime(i/10);   //每隔1s更新一次
 		}
        	//按键控制(如VK_RETURN为回车的虚拟键值)	
      	if(KEY_DOWN(VK_UP)&&cur.y>70)           //上
